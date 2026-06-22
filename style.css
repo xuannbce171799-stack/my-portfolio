@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #0f172a;
+    --second-bg-color: #1e293b;
+    --text-color: #f8fafc;
+    --main-color: #0ea5e9;
+    --muted-color: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+section {
+    min-height: 100vh;
+    padding: 8rem 9% 2rem;
+}
+
+/* Navbar CSS */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 9%;
+    background: rgba(15, 23, 42, 0.95); /* Tăng độ đậm để menu rõ hơn */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--main-color);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-color);
+}
+
+/* Hero Section CSS */
+.hero {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0.5rem 0;
+}
+
+.hero-content h3 span {
+    color: var(--main-color);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: var(--muted-color);
+    line-height: 1.6;
+    margin: 1.5rem 0 2rem;
+    max-width: 600px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.social-icons a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: var(--main-color);
+    }
+    /* --- Cập nhật kích thước Avatar nhỏ gọn, vừa phải --- */
+.hero {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 4rem;
+}
+
+.hero-content {
+    flex: 1.4; /* Tăng không gian cho phần chữ */
+}
+
+.hero-avatar {
+    flex: 0.6; /* Giảm không gian phần ảnh */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Khung viền tròn nhỏ vừa phải (Đã sửa từ 320px xuống 180px) */
+.avatar-img-box {
+    position: relative;
+    width: 180px;  /* Kích thước lý tưởng cho avatar nhỏ gọn */
+    height: 180px; /* Bắt buộc bằng width để tạo hình tròn hoàn hảo */
+    border-radius: 50%;
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.avatar-img-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--main-color);
+}
+
+.avatar-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Lớp phủ icon máy ảnh khi di chuột vào */
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.avatar-img-box:hover .avatar-overlay {
+    opacity: 1;
+}
+
+.avatar-overlay i {
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+/* Tối ưu hiển thị trên Mobile */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Ảnh ở trên, chữ ở dưới */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Trên điện thoại giữ nguyên kích thước nhỏ gọn xinh xắn */
+    .avatar-img-box {
+        width: 150px;
+        height: 150px;
+    }
+}
